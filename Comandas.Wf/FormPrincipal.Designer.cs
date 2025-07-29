@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            btnCardapio = new Button();
-            button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            btnCardapio = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,32 +49,19 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Menu Principal";
             // 
-            // btnCardapio
+            // button4
             // 
-            btnCardapio.BackColor = Color.Gold;
-            btnCardapio.FlatAppearance.BorderSize = 0;
-            btnCardapio.FlatStyle = FlatStyle.Flat;
-            btnCardapio.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCardapio.Location = new Point(37, 32);
-            btnCardapio.Name = "btnCardapio";
-            btnCardapio.Size = new Size(149, 130);
-            btnCardapio.TabIndex = 0;
-            btnCardapio.Text = "Cardápio";
-            btnCardapio.UseVisualStyleBackColor = false;
-            btnCardapio.Click += btnCardapio_Click;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.LightGreen;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(191, 32);
-            button2.Name = "button2";
-            button2.Size = new Size(149, 130);
-            button2.TabIndex = 0;
-            button2.Text = "Comanda";
-            button2.UseVisualStyleBackColor = false;
+            button4.BackColor = Color.Salmon;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button4.Location = new Point(497, 32);
+            button4.Name = "button4";
+            button4.Size = new Size(149, 130);
+            button4.TabIndex = 0;
+            button4.Text = "Usuários";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -89,18 +76,32 @@
             button3.Text = "Pedido Cozinha";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // button2
             // 
-            button4.BackColor = Color.Salmon;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button4.Location = new Point(497, 32);
-            button4.Name = "button4";
-            button4.Size = new Size(149, 130);
-            button4.TabIndex = 0;
-            button4.Text = "Usuários";
-            button4.UseVisualStyleBackColor = false;
+            button2.BackColor = Color.LightGreen;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(191, 32);
+            button2.Name = "button2";
+            button2.Size = new Size(149, 130);
+            button2.TabIndex = 0;
+            button2.Text = "Comanda";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // btnCardapio
+            // 
+            btnCardapio.BackColor = Color.Gold;
+            btnCardapio.FlatAppearance.BorderSize = 0;
+            btnCardapio.FlatStyle = FlatStyle.Flat;
+            btnCardapio.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCardapio.Location = new Point(37, 32);
+            btnCardapio.Name = "btnCardapio";
+            btnCardapio.Size = new Size(149, 130);
+            btnCardapio.TabIndex = 0;
+            btnCardapio.Text = "Cardápio";
+            btnCardapio.UseVisualStyleBackColor = false;
+            btnCardapio.Click += btnCardapio_Click;
             // 
             // FormPrincipal
             // 

@@ -11,5 +11,10 @@ namespace Comandas.Wf
         {
             new FormCardapio().ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
