@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace Comandas.Wf
 {
-    public partial class FormCardapio : Form
+    public partial class FormCardapioCad : Form
     {
-        public FormCardapio()
+        public FormCardapioCad()
         {
             InitializeComponent();
         }
 
-        private void btnAdItemCardapio_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            new FormCardapioCad().ShowDialog();
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
