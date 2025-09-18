@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Comandas.Wf.Migrations
 {
     [DbContext(typeof(ComandasDbContext))]
-    [Migration("20250903235837_versao1")]
+    [Migration("20250917234532_versao1")]
     partial class versao1
     {
         /// <inheritdoc />
@@ -229,7 +229,7 @@ namespace Comandas.Wf.Migrations
                     b.HasOne("Comandas.Wf.Modelos.PedidoCozinha", "PedidoCozinha")
                         .WithMany()
                         .HasForeignKey("PedidoCozinhaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ComandaItens");

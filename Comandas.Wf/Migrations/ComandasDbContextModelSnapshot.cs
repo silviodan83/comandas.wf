@@ -226,7 +226,7 @@ namespace Comandas.Wf.Migrations
                     b.HasOne("Comandas.Wf.Modelos.PedidoCozinha", "PedidoCozinha")
                         .WithMany()
                         .HasForeignKey("PedidoCozinhaId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("ComandaItens");

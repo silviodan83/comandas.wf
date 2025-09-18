@@ -22,5 +22,15 @@ namespace Comandas.Wf
             optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ComandasDb;Trusted_Connection=True;TrustServerCertificate=True;");
             base.OnConfiguring(optionsBuilder);
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {// Define a chave estrangeira de PedidoCozinhaItem e desativa o Delete em cascata
+            modelBuilder.Entity<PedidoCozinha>()
+                .HasMany<PedidoCozinhaItem>()
+                .WithOne(pci => pci.PedidoCozinha)
+                .HasForeignKey(pci => pci.PedidoCozinhaId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

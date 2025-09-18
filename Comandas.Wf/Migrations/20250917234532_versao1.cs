@@ -139,8 +139,7 @@ namespace Comandas.Wf.Migrations
                         name: "FK_PedidoCozinhaItems_PedidoCozinhas_PedidoCozinhaId",
                         column: x => x.PedidoCozinhaId,
                         principalTable: "PedidoCozinhas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

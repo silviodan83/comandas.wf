@@ -4,6 +4,7 @@ namespace Comandas.Wf
     {
         public FormPrincipal()
         {
+            InicializarBanco.Inicializar(new ComandasDbContext());
             InitializeComponent();
         }
 
