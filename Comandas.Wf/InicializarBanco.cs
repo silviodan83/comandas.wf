@@ -72,7 +72,39 @@ namespace Comandas.Wf
                     Titulo = "X-Salada"
                 });
             }
-
+            if (!comandasDbContext.Comandas.Any())
+            {
+                comandasDbContext.Comandas.Add(new Comanda
+                {
+                    NomeCliente = "Silvio Nespoli Dan",
+                    NumeroMesa = 1,
+                    SituacaoComanda = 0, // é isso mesmo?
+                    //ComandaItens = , // não sei o que recebe
+                });
+                comandasDbContext.Comandas.Add(new Comanda
+                {
+                    NomeCliente = "Viviane Dan",
+                    NumeroMesa = 2,
+                    SituacaoComanda = 0, // é isso mesmo?
+                    //ComandaItens = , // não sei o que recebe
+                });
+                comandasDbContext.Comandas.Add(new Comanda
+                {
+                    NomeCliente = "Felipe de Oliveia Dan",
+                    NumeroMesa = 3,
+                    SituacaoComanda = 0, // é isso mesmo?
+                    //ComandaItens = , // não sei o que recebe
+                });
+            }
+            if (!comandasDbContext.PedidoCozinhas.Any())
+            {
+                comandasDbContext.PedidoCozinhas.Add(new PedidoCozinha
+                {
+                    ComandaId = 1,
+                    //Comanda = 1, // não sei o que recece
+                    SituacaoId = 1 //  
+                });
+            }
             // Salva as alterações
             comandasDbContext.SaveChanges();
         }
