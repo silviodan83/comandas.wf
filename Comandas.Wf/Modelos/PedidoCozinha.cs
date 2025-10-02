@@ -16,6 +16,6 @@ namespace Comandas.Wf.Modelos
         public int ComandaId { get; set; }
         public virtual Comanda Comanda { get; set; }
         public int SituacaoId { get; set; }
-
+        public  virtual ICollection<PedidoCozinhaItem> itens { get; set; }
     }
 }

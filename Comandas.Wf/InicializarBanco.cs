@@ -11,6 +11,7 @@ namespace Comandas.Wf
     {
         public static void Inicializar(ComandasDbContext comandasDbContext)
         {
+            comandasDbContext.Database.EnsureCreated();
             // Se não tem nenhum usuário no banco
             if (!comandasDbContext.Usuarios.Any())
             {
@@ -41,22 +42,24 @@ namespace Comandas.Wf
                     SituacaoMesa = 0,
                 });
             }
+            var cardapio1 = new CardapioItem
+            {
+                Descricao = "Coca Cola Lata 350ml",
+                PossuiPreparo = false,
+                Preco = 5m,
+                Titulo = "Coca Cola Lata 350ml",
+            };
+            var cardapio2 = new CardapioItem
+            {
+                Descricao = "Fanta Laranja Lata 350ml",
+                PossuiPreparo = false,
+                Preco = 5m,
+                Titulo = "Fanta Laranja Lata 350ml",
+            };
             if (!comandasDbContext.CardapioItems.Any())
             {
-                comandasDbContext.CardapioItems.Add(new CardapioItem
-                {
-                    Descricao = "Coca Cola Lata 350ml",
-                    PossuiPreparo = false,
-                    Preco = 5m,
-                    Titulo = "Coca Cola Lata 350ml",
-                });
-                comandasDbContext.CardapioItems.Add(new CardapioItem
-                {
-                    Descricao = "Fanta Laranja Lata 350ml",
-                    PossuiPreparo = false,
-                    Preco = 5m,
-                    Titulo = "Fanta Laranja Lata 350ml",
-                });
+                comandasDbContext.CardapioItems.Add(cardapio1);
+                comandasDbContext.CardapioItems.Add(cardapio2);
                 comandasDbContext.CardapioItems.Add(new CardapioItem
                 {
                     Descricao = "Bland de 180g, pão de brioche, salada e bacon",
@@ -78,32 +81,65 @@ namespace Comandas.Wf
                 {
                     NomeCliente = "Silvio Nespoli Dan",
                     NumeroMesa = 1,
-                    SituacaoComanda = 0, // é isso mesmo?
-                    //ComandaItens = , // não sei o que recebe
+                    SituacaoComanda = 1,
+                    ComandaItens = new List<ComandaItens>() { 
+                    new ComandaItens
+                    {
+                        CardapioItem = cardapio1
+                    },
+                        new ComandaItens {
+                       CardapioItem = cardapio2, 
+                    }
+                    },
                 });
-                comandasDbContext.Comandas.Add(new Comanda
-                {
-                    NomeCliente = "Viviane Dan",
-                    NumeroMesa = 2,
-                    SituacaoComanda = 0, // é isso mesmo?
-                    //ComandaItens = , // não sei o que recebe
-                });
-                comandasDbContext.Comandas.Add(new Comanda
-                {
-                    NomeCliente = "Felipe de Oliveia Dan",
-                    NumeroMesa = 3,
-                    SituacaoComanda = 0, // é isso mesmo?
-                    //ComandaItens = , // não sei o que recebe
-                });
+                //comandasDbContext.Comandas.Add(new Comanda
+                //{
+                //    NomeCliente = "Viviane Dan",
+                //    NumeroMesa = 2,
+                //    SituacaoComanda = 1,
+                //    ComandaItens = new List<ComandaItens>() 
+                //    {
+                //        new ComandaItens
+                //        {
+                //            CardapioItemId = 3,
+                            
+                //        }, 
+                //        new ComandaItens 
+                //        { 
+                //            CardapioItemId = 4,
+                //        }
+                        
+                //    }
+                //});
+                //comandasDbContext.Comandas.Add(new Comanda
+                //{
+                //    NomeCliente = "Felipe de Oliveia Dan",
+                //    NumeroMesa = 3,
+                //    SituacaoComanda =1,
+                //    ComandaItens = new List<ComandaItens>()
+                //    {
+                //        new ComandaItens
+                //        { 
+                //            CardapioItemId = 1,
+                //        }
+                //    }
+                //});
             }
             if (!comandasDbContext.PedidoCozinhas.Any())
             {
-                comandasDbContext.PedidoCozinhas.Add(new PedidoCozinha
-                {
-                    ComandaId = 1,
-                    //Comanda = 1, // não sei o que recece
-                    SituacaoId = 1 //  
-                });
+                //comandasDbContext.PedidoCozinhas.Add(new PedidoCozinha
+                //{
+                //    ComandaId = 2,
+                //    SituacaoId = 1,
+                    //itens = new List<PedidoCozinhaItem>
+                    //{ 
+                    //    new PedidoCozinhaItem
+                    //    {
+                    //        ComandaItemId = 3,
+                    //    }
+                    //}
+
+               // });
             }
             // Salva as alterações
             comandasDbContext.SaveChanges();
