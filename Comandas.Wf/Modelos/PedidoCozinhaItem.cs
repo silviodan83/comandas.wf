@@ -12,7 +12,7 @@ public class PedidoCozinhaItem
     public int PedidoCozinhaId { get; set; }
     public virtual PedidoCozinha PedidoCozinha { get; set; }
     public int ComandaItemId { get; set; }
-    public virtual ComandaItens ComandaItens { get; set; }
+    public virtual ComandaItens ComandaItem { get; set; }
 
 
 }

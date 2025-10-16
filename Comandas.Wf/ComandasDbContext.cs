@@ -25,11 +25,18 @@ namespace Comandas.Wf
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {// Define a chave estrangeira de PedidoCozinhaItem e desativa o Delete em cascata
             modelBuilder.Entity<PedidoCozinha>()
-                .HasMany<PedidoCozinhaItem>()
+                .HasMany(pc=>pc.itens)
                 .WithOne(pci => pci.PedidoCozinha)
                 .HasForeignKey(pci => pci.PedidoCozinhaId)
                 .OnDelete(DeleteBehavior.NoAction);
-
+            modelBuilder.Entity<PedidoCozinhaItem>()
+                .HasOne(pci=>pci.PedidoCozinha)
+                .WithMany(pc=>pc.itens)
+                .HasForeignKey(pc=>pc.PedidoCozinhaId)
+                .OnDelete(DeleteBehavior.NoAction);
+            modelBuilder.Entity<CardapioItem>()
+                .Property(ci => ci.Preco)
+                .HasColumnType("decimal(10,2)");
             base.OnModelCreating(modelBuilder);
         }
     }
