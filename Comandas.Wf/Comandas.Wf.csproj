@@ -21,4 +21,19 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FormUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormUsuarioCad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormMesaCad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormMesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

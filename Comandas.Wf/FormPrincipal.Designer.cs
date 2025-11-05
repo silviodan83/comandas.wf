@@ -75,6 +75,7 @@
             button3.TabIndex = 0;
             button3.Text = "Pedido Cozinha";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -88,6 +89,7 @@
             button2.TabIndex = 0;
             button2.Text = "Comanda";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // btnCardapio
             // 
